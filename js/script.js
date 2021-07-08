@@ -60,26 +60,29 @@ for(let link of links){
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
 
-function generateTitleLinks(){
+  function generateTitleLinks(){
 
-  /* [DONE] remove contents of titleList */
+    /* [DONE] remove contents of titleList */
 
-  const titleList = document.querySelector(optTitleListSelector);
+    const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
 
-  /* for each article */
+    /* [DONE] for each article */
 
-    /* get the article id */
+    const articles = document.querySelectorAll(optArticleSelector);
+      for(let article of articles){
 
-    /* find the title element */
+      /* get the article id */
 
-    /* get the title from the title element */
+      /* find the title element */
 
-    /* create HTML of the link */
+      /* get the title from the title element */
 
-    /* insert link into titleList */
+      /* create HTML of the link */
 
-}
+      /* insert link into titleList */
 
-generateTitleLinks();
+      }
+    generateTitleLinks();
+  }
 }
