@@ -89,7 +89,10 @@ for(let link of links){
       const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
       console.log(linkHTML);
 
-      /* insert link into titleList */
+      /* [DONE] insert link into titleList */
+
+      titleList.insertAdjacentHTML = titleList.insertAdjacentHTML + linkHTML;
+        console.log(titleList);
 
       }
     generateTitleLinks();
