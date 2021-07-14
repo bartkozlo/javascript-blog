@@ -47,62 +47,93 @@ const titleClickHandler = function(event){
   /* [DONE] add class 'active' to the correct article */
 
   targetArticle.classList.add('active');
-}
+};
 
-{
-  const optArticleSelector = '.post',
-    optTitleSelector = '.post-title',
-    optTitleListSelector = '.titles';
 
-  function generateTitleLinks(){
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optArticleTagsSelector = '.post-tags .list',
+  optTitleListSelector = '.titles';
+
+function generateTitleLinks(){
 
   /* [DONE] remove contents of titleList */
 
   const titleList = document.querySelector(optTitleListSelector);
-    titleList.innerHTML = '';
+  titleList.innerHTML = '';
 
   let html = '';
 
   /* [DONE] for each article */
 
   const articles = document.querySelectorAll(optArticleSelector);
-    for(let article of articles){
+  for(let article of articles){
 
     /* [DONE] get the article id */
 
     const articleId = article.getAttribute('id');
-      console.log(articleId);
+    console.log(articleId);
 
     /* [DONE] find the title element */
 
     /* [DONE] get the title from the title element */
 
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
-      console.log(articleTitle);
+    console.log(articleTitle);
 
     /* [DONE] create HTML of the link */
 
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-      console.log(linkHTML);
+    console.log(linkHTML);
 
     /* [DONE] insert link into titleList */
 
     titleList.insertAdjacentHTML = titleList.insertAdjacentHTML + linkHTML;
-      console.log(titleList);
+    console.log(titleList);
 
     html = html + linkHTML;
     console.log(html);
-    }
+  }
 
   titleList.innerHTML = html;
 
   const links = document.querySelectorAll('.titles a');
-    console.log(links);
+  console.log(links);
 
   for(let link of links){
     link.addEventListener('click', titleClickHandler);
   }
-  }
-  generateTitleLinks();
 }
+generateTitleLinks();
+
+function generateTags(){
+  /* find all articles */
+
+  /* START LOOP: for every article: */
+
+    /* find tags wrapper */
+
+    /* make html variable with empty string */
+
+    /* get tags from data-tags attribute */
+
+    /* split tags into array */
+
+    /* START LOOP: for each tag */
+
+      /* generate HTML of the link */
+
+      /* add generated code to html variable */
+
+    /* END LOOP: for each tag */
+
+    /* insert HTML of all the links into the tags wrapper */
+
+  /* END LOOP: for every article: */
+}
+
+generateTags();
+
+
+
 
