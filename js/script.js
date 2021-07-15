@@ -250,3 +250,46 @@ function generateAuthors(){                                                     
 }
 
 generateAuthors();
+
+function authorClickHandler(event){                                                         //-------------- function authorClickHandler --------------//
+
+  event.preventDefault();
+
+  const clickedElement = this;
+
+  const href = clickedElement.getAttribute('href');
+
+  const author = href.replace('#author-', '');
+
+  const authorLinks = document.querySelectorAll('a.active[href^="#author-"]');
+
+  for(let authorLink of authorLinks){
+
+    authorLink.classList.remove('active');
+
+  }
+
+  const authorLinksHref = document.querySelectorAll('a[href="' + href + '"]');
+
+  for(let authorLinkHref of authorLinksHref){
+
+    authorLinkHref.classList.add('active');
+
+  }
+
+  generateTitleLinks('[data-author="' + author + '"]');
+
+}
+
+function addClickListenersToAuthors(){                                                      //-------------- function addClickListenersToAuthors --------------//
+
+  const authorLinks = document.querySelectorAll('a[href^="#author-"]');
+
+  for(let authorLink of authorLinks){
+
+    authorLink.addEventListener('click', authorClickHandler);
+
+  }
+}
+
+addClickListenersToAuthors();
