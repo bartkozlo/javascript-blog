@@ -5,7 +5,7 @@
   console.log('links:', links);
 }); */
 
-const titleClickHandler = function(event){
+const titleClickHandler = function(event){                                                  //----------------function titleClickHandler ------------//
   event.preventDefault();
   const clickedElement = this;
   console.log('Link was clicked!');
@@ -38,7 +38,6 @@ const titleClickHandler = function(event){
   const articleSelector = clickedElement.getAttribute('href');
   console.log(articleSelector);
 
-
   /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
   const targetArticle = document.querySelector(articleSelector);
@@ -49,13 +48,12 @@ const titleClickHandler = function(event){
   targetArticle.classList.add('active');
 };
 
-
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optArticleTagsSelector = '.post-tags .list',
   optTitleListSelector = '.titles';
 
-function generateTitleLinks(){
+function generateTitleLinks(customSelector = ''){                                           // ------------- function generateTitleLinks -------------- //
 
   /* [DONE] remove contents of titleList */
 
@@ -66,7 +64,7 @@ function generateTitleLinks(){
 
   /* [DONE] for each article */
 
-  const articles = document.querySelectorAll(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
   for(let article of articles){
 
     /* [DONE] get the article id */
@@ -107,7 +105,7 @@ function generateTitleLinks(){
 
 generateTitleLinks();
 
-function generateTags(){
+function generateTags(){                                                                    //----------------- function generateTags -------------//
 
   /* [DONE] find all articles */
 
@@ -161,7 +159,7 @@ function generateTags(){
 
 generateTags();
 
-function tagClickHandler(event){
+function tagClickHandler(event){                                                            //--------------- functiontagClickHandler -----------//
 
   /* [DONE] prevent default action for this event */
 
@@ -213,9 +211,7 @@ function tagClickHandler(event){
   generateTitleLinks('[data-tags~="' + tag + '"]');
 }
 
-
-
-function addClickListenersToTags(){
+function addClickListenersToTags(){                                                         //------------------- function addClickListenerToTags -------------//
 
   /* [DONE] find all links to tags */
 
